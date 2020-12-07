@@ -1,18 +1,22 @@
-import React, { Component } from 'react';
-import Timer from './components/Timer';
-import { Container, Box } from '@material-ui/core/'
+import { Container, Grid, Divider, Typography } from '@material-ui/core'
+import Countdown from './components/Countdown';
 import './App.css';
 
-class App extends Component {
-  render() {
+function App() {
     return (
-      <Container>
-        <Box display="flex" justifyContent="center" alignItems="center" minHeight="100vh">
-          <Timer startMinutes="3" startSeconds="0" />
-        </Box>
-      </Container>
+      <div className="App">
+        <Container maxWidth="xs">
+          <Grid container direction="column" alignItems="center">
+            <Grid item style={{marginBottom: 4}}>
+              <Typography variant="h5" className="Header" gutterBottom>
+                <strong>COUNTDOWN TIMER</strong>
+              </Typography>
+            </Grid>
+            <Countdown />
+          </Grid>
+        </Container>
+      </div>
     );
-  }
 }
 
 export default App;
